@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-import { Button, Form } from 'react-bootstrap'
+import { Button, Form, FormLabel } from 'react-bootstrap'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
@@ -86,6 +86,9 @@ const Validaciones = ({ llamadaTraida }) => {
                             {/* <p>{!paraConfirmar ? VALIDACION1 : IR A CONFIRMAR}</p> */}
                             <Form onSubmit={handleSubmit(onSubmit)}>
                                 <Form.Group controlId="radioGroup">
+                                    {validacionDTOS && validacionDTOS[indiceValidacion] && (
+                                        <FormLabel>{validacionDTOS[indiceValidacion].nombre}</FormLabel>
+                                    )}
                                     {validacionDTOS[indiceValidacion]?.opcionValidacionDTOS?.map((opcion, index) => (
                                         <Form.Check
                                             key={index}

@@ -12,6 +12,7 @@ import { ErrorValidacion } from './components/ErrorValidacion/ErrorValidacion';
 import { ErrorConfirmacion } from './components/ErrorConfirmacion/ErrorConfirmacion';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Exito } from './components/Exito/Exito';
 
 function App() {
   const [llamadaTraida, setLlamadaTraida] = useState(null);
@@ -67,6 +68,13 @@ function App() {
           path='/errorConfirmacion'
           element={
             <ErrorConfirmacion />
+          }
+        />
+
+        <Route
+          path='/exito'
+          element={
+            <Exito />
           }
         />
       </Routes>

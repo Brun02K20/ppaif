@@ -9,12 +9,12 @@ const ModalFinal = ({ show, handleClose }) => {
 
     const onSubmit = async (data) => {
         console.log("conf: ", data);
-        const response = await axios.post("http://localhost:4000/api/confirmacion", data)
+        const response = await axios.post("http://localhost:4000/api/confirmacion", data, { timeout: 20000 })
         if (response.data === false) {
             handleClose();
             navigate("/errorConfirmacion")
         } else {
-            navigate("/")
+            navigate("/exito")
         }
     };
 
